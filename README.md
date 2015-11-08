@@ -1,10 +1,15 @@
 # macrandmac
-MAC Randomization script for Yosemite. 
+MAC Randomization script for Yosemite and El Capitan.
 
 Features:
 - MAC change logging (With SSID, IP, timestamp etc)
-- Automatic sudoers config to allow sudo-less operation without root
-- Blacklist-based selective operation by BSSID/AP name'
+- Whitelist-based switching to predefined MAC based on SSID 
 - Notifications
-- Random or dictionary-based OUI (Preloaded with all Apple OUIs)
+- Dictionary-based OUI (Preloaded with all Apple OUIs)
 
+# Setup
+Configure sudoers so that the following commands can run without prompting for a password:
+- `sudo ifconfig en0 down`
+- `sudo ifconfig en0 up`
+- `sudo ifconfig en0 ether *`
+  
