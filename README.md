@@ -6,4 +6,5 @@ Features:
 - Automatic sudoers config to allow sudo-less operation without root
 - Blacklist-based selective operation by BSSID/AP name'
 - Notifications
+- Random or dictionary-based OUI (Preloaded with all Apple OUIs)
 
