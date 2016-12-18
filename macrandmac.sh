@@ -23,7 +23,7 @@ if [ "b$?" == "b0" ]; then # check return value of grep to see if the SSID is in
 else
 
 	# Show console notice
-	echo "Setting MAC to $(echo "$(head -$((${RANDOM} % `wc -l < macrandmac_oui.txt` + 5)) macrandmac_oui.txt | tail -1):$(openssl rand -hex 3 | sed 's/\(..\)/\1:/g; s/.$//')" | tee .temp_mac) with OUI from list \"$(head -3 macrandmac_oui.txt.txt | tail -1 | cut -c 3-)\""
+	echo "Setting MAC to $(echo "$(head -$((${RANDOM} % `wc -l < macrandmac_oui.txt` + 5)) macrandmac_oui.txt | tail -1):$(openssl rand -hex 3 | sed 's/\(..\)/\1:/g; s/.$//')" | tee .temp_mac) with OUI from list \"$(head -3 macrandmac_oui.txt | tail -1 | cut -c 3-)\""
 
 	sudo ifconfig $IF down
 	sudo ifconfig $IF ether $(cat .temp_mac)
